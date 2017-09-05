@@ -1,0 +1,86 @@
+body {
+  overflow-x: hidden;
+}
+
+.app {
+  position: relative;
+}
+
+.navigation {
+  list-style: none;
+  @media screen and(max-width: map-get($breakpoints-max, m)) {
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: -200px;
+    background: #6d6d6d;
+  }
+  @media screen and(min-width: map-get($breakpoints, m)) {
+    display: flex;
+  }
+}
+
+.nav-item {
+  border-bottom: 1px solid #FFF;
+  @media screen and(min-width: map-get($breakpoints, m)) {
+    border-bottom: none;
+    border-left: 1px solid #FFF;
+    border-right: 1px solid #FFF;
+    margin-right: -1px;
+  }
+  .nav-item-link {
+    display: block;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    transition: background 0.5s;
+    @media screen and(min-width: map-get($breakpoints, m)) {
+      color: black;
+    }
+    &:hover {
+      background: #8f8f8f;
+    }
+  }
+}
+
+.burger {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+
+label[for="burger"] {
+  display: block;
+  width: 48px;
+  font-size: 48px;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  &:hover{
+    background: #8f8f8f;
+  }
+  @media screen and(min-width: map-get($breakpoints, m)) {
+    display: none;
+  }
+}
+
+.burger + label, .app {
+  transition: all 0.5s ease-in-out;
+}
+
+.burger:checked ~ .app {
+  transform: translateX(200px);
+  @media screen and(min-width: map-get($breakpoints, m)) {
+    transform: translateX(0px);
+  }
+  label[for="burger"]{
+    background: #8f8f8f;
+  }
+}
+
+
+
+
+
+
+

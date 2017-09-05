@@ -1,0 +1,46 @@
+// layout
+.app {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.app-body {
+  flex: 1;
+  @media screen and(min-width: map-get($breakpoints, m)) {
+    display: flex;
+  }
+}
+
+.main {
+  flex: 1;
+  @media screen and(min-width: map-get($breakpoints, m)) {
+    margin: 0 15px;
+    background: green;
+  }
+}
+
+.left-sidebar {
+  @media screen and(min-width: map-get($breakpoints, m)) {
+    flex: 0 0 250px;
+  }
+}
+
+.right-sidebar {
+  @media screen and(min-width: map-get($breakpoints, m)) {
+    flex: 0 0 200px;
+  }
+}
+
+// hidden
+
+.hidden-s{
+  @media screen and(max-width: map-get($breakpoints-max, m)){
+    display: none;
+  }
+}
+.hidden-m{
+  @media screen and(min-width: map-get($breakpoints, m)) {
+    display: none;
+  }
+}
